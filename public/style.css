@@ -1,0 +1,262 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #000;
+  color: #fff;
+  font-family: 'Hiragino Mincho ProN', 'Yu Mincho', 'MS Mincho', serif;
+  overflow: hidden;
+  width: 100vw;
+  height: 100vh;
+  user-select: none;
+}
+
+/* --- 画面切り替え --- */
+.screen {
+  display: none;
+  width: 100vw;
+  height: 100vh;
+}
+.screen.active {
+  display: flex;
+}
+
+/* --- タイトル画面 --- */
+#title-screen {
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: #000;
+}
+
+.title-content {
+  text-align: center;
+}
+
+.title-main {
+  font-size: 4rem;
+  font-weight: normal;
+  letter-spacing: 0.2em;
+  margin-bottom: 1rem;
+  animation: fadeIn 1s ease;
+}
+
+.title-sub {
+  font-size: 1.1rem;
+  color: #888;
+  letter-spacing: 0.3em;
+  margin-bottom: 3rem;
+  animation: fadeIn 1.5s ease;
+}
+
+button {
+  background: transparent;
+  color: #fff;
+  border: 1px solid #fff;
+  padding: 0.8rem 2.5rem;
+  font-size: 1.1rem;
+  font-family: inherit;
+  letter-spacing: 0.2em;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+  animation: fadeIn 2s ease;
+}
+
+button:hover {
+  background: #fff;
+  color: #000;
+}
+
+/* --- ゲーム画面 --- */
+#game-screen {
+  flex-direction: column;
+}
+
+#game-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1.5rem;
+  background: #000;
+  border-bottom: 1px solid #222;
+  height: auto;
+  flex-shrink: 0;
+  letter-spacing: 0.1em;
+}
+
+#stage-label {
+  font-size: 0.85rem;
+  color: #555;
+  min-width: 60px;
+}
+
+#stage-title {
+  font-size: 3.5rem;
+  letter-spacing: 0.2em;
+  flex: 1;
+  text-align: left;
+  padding-left: 1rem;
+  line-height: 1.1;
+}
+
+#timer {
+  font-size: 3.5rem;
+  font-variant-numeric: tabular-nums;
+  color: #888;
+  letter-spacing: 0.05em;
+  transition: color 0.2s;
+  white-space: nowrap;
+}
+
+#mistake-count {
+  font-size: 0.85rem;
+  color: #c00;
+  min-width: 70px;
+  text-align: right;
+}
+
+/* --- グリッド --- */
+#grid {
+  flex: 1;
+  display: grid;
+  overflow: hidden;
+  background: #000;
+}
+
+.cell {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: inherit;
+  color: #fff;
+  transition: color 0.1s;
+  line-height: 1;
+}
+
+.cell:hover {
+  color: #aaa;
+}
+
+.cell.wrong {
+  color: #f00;
+  animation: shake 0.3s ease;
+}
+
+.cell.correct {
+  color: #0f0;
+  animation: pop 0.5s ease forwards;
+}
+
+/* --- 煽りボックス --- */
+#taunt-box {
+  position: fixed;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0, 0, 0, 0.9);
+  border: 1px solid #444;
+  padding: 0.7rem 2rem;
+  font-size: 1rem;
+  letter-spacing: 0.1em;
+  color: #aaa;
+  white-space: nowrap;
+  animation: slideUp 0.3s ease;
+  z-index: 100;
+}
+
+#taunt-box.hidden {
+  display: none;
+}
+
+/* --- クリア画面 --- */
+#clear-screen {
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: #000;
+}
+
+.clear-content {
+  text-align: center;
+}
+
+.clear-title {
+  font-size: 2.5rem;
+  font-weight: normal;
+  letter-spacing: 0.3em;
+  margin-bottom: 2rem;
+  animation: fadeIn 0.8s ease;
+}
+
+#enlightenment-score {
+  font-size: 5rem;
+  font-weight: bold;
+  letter-spacing: 0.05em;
+  margin-bottom: 1.5rem;
+  animation: fadeIn 1s ease;
+}
+
+#diagnosis-comment {
+  font-size: 1.2rem;
+  color: #888;
+  letter-spacing: 0.15em;
+  margin-bottom: 1.5rem;
+  max-width: 500px;
+  line-height: 1.8;
+  animation: fadeIn 1.2s ease;
+}
+
+#clear-stats {
+  font-size: 0.9rem;
+  color: #444;
+  letter-spacing: 0.1em;
+  margin-bottom: 2.5rem;
+  animation: fadeIn 1.4s ease;
+}
+
+#retry-btn {
+  animation: fadeIn 1.6s ease;
+}
+
+#gameover-stage {
+  font-size: 1.4rem;
+  color: #c00;
+  letter-spacing: 0.15em;
+  margin-bottom: 1rem;
+  animation: fadeIn 1s ease;
+}
+
+#gameover-stats {
+  font-size: 0.9rem;
+  color: #444;
+  letter-spacing: 0.1em;
+  margin-bottom: 2.5rem;
+  animation: fadeIn 1.2s ease;
+}
+
+/* --- アニメーション --- */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25%       { transform: translateX(-4px); }
+  75%       { transform: translateX(4px); }
+}
+
+@keyframes pop {
+  0%   { transform: scale(1); }
+  50%  { transform: scale(2.5); }
+  100% { transform: scale(1.5); opacity: 0.5; }
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateX(-50%) translateY(10px); }
+  to   { opacity: 1; transform: translateX(-50%) translateY(0); }
+}

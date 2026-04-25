@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ZENをさがせ！</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- タイトル画面 -->
+  <div id="title-screen" class="screen active">
+    <div class="title-content">
+      <h1 class="title-main">ZENをさがせ！</h1>
+      <p class="title-sub">混沌の中に禅を見つけよ</p>
+      <button id="start-btn">修行を始める</button>
+    </div>
+  </div>
+
+  <!-- ゲーム画面 -->
+  <div id="game-screen" class="screen">
+    <div id="game-header">
+      <span id="stage-label">1 / 5</span>
+      <span id="stage-title">禅を見つけよ</span>
+      <span id="timer">0.0s</span>
+      <span id="mistake-count">ミス: 0</span>
+    </div>
+    <div id="grid"></div>
+    <div id="taunt-box" class="hidden">
+      <span id="taunt-text"></span>
+    </div>
+  </div>
+
+  <!-- ゲームオーバー画面 -->
+  <div id="gameover-screen" class="screen">
+    <div class="clear-content">
+      <h2 class="clear-title" style="color:#c00;">修行失敗</h2>
+      <div id="gameover-stage"></div>
+      <div id="gameover-stats"></div>
+      <button id="gameover-retry-btn">もう一度修行する</button>
+    </div>
+  </div>
+
+  <!-- クリア画面 -->
+  <div id="clear-screen" class="screen">
+    <div class="clear-content">
+      <h2 class="clear-title">悟りを開いた</h2>
+      <div id="enlightenment-score">---</div>
+      <div id="diagnosis-comment">診断中...</div>
+      <div id="clear-stats"></div>
+      <button id="retry-btn">もう一度修行する</button>
+    </div>
+  </div>
+
+  <script src="game.js"></script>
+</body>
+</html>
