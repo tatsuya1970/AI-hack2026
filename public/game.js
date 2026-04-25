@@ -39,7 +39,12 @@ const statsEl       = document.getElementById('clear-stats');
 // --- 4面ごとに文字サイズが半分になる ---
 function getCellSize() {
   const loopCount = Math.floor(currentStageIndex / 4);
-  return Math.max(20, BASE_CELL_SIZE / Math.pow(2, loopCount));
+  // モバイルでは画面幅に合わせてベースサイズを調整（約6列分）
+  const base = window.innerWidth < 600
+    ? Math.floor(window.innerWidth / 6)
+    : BASE_CELL_SIZE;
+  const minSize = window.innerWidth < 600 ? 14 : 20;
+  return Math.max(minSize, base / Math.pow(2, loopCount));
 }
 
 // --- 画面切り替え ---

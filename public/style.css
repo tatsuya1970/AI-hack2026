@@ -269,3 +269,81 @@ button:hover {
   from { opacity: 0; transform: translateX(-50%) translateY(10px); }
   to   { opacity: 1; transform: translateX(-50%) translateY(0); }
 }
+
+/* --- レスポンシブ（スマホ対応） --- */
+@media (max-width: 600px) {
+  .title-main {
+    font-size: 2.5rem;
+  }
+
+  .title-sub {
+    font-size: 0.9rem;
+    margin-bottom: 2rem;
+  }
+
+  button {
+    padding: 0.7rem 1.5rem;
+    font-size: 1rem;
+  }
+
+  #game-header {
+    padding: 0.3rem 0.5rem;
+    gap: 0.2rem;
+  }
+
+  #stage-label {
+    font-size: 0.7rem;
+    min-width: auto;
+  }
+
+  #stage-title {
+    font-size: 1.6rem;
+    padding-left: 0.3rem;
+  }
+
+  #timer {
+    font-size: 1.6rem;
+  }
+
+  #mistake-count {
+    font-size: 0.7rem;
+    min-width: auto;
+  }
+
+  .clear-title {
+    font-size: 2.8rem;
+    margin-bottom: 1rem;
+  }
+
+  #enlightenment-score {
+    font-size: 2.8rem;
+    margin-bottom: 1rem;
+  }
+
+  #diagnosis-comment {
+    font-size: 1rem;
+    max-width: 90vw;
+    margin-bottom: 1rem;
+  }
+
+  #clear-stats {
+    margin-bottom: 1.5rem;
+  }
+
+  #gameover-stage {
+    font-size: 1.8rem;
+  }
+
+  #gameover-stats {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+  }
+
+  #taunt-box {
+    white-space: normal;
+    text-align: center;
+    max-width: 85vw;
+    bottom: 1rem;
+    font-size: 0.9rem;
+  }
+}
