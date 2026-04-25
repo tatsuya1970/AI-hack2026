@@ -185,7 +185,7 @@ button:hover {
 }
 
 .clear-title {
-  font-size: 2.5rem;
+  font-size: 5rem;
   font-weight: normal;
   letter-spacing: 0.3em;
   margin-bottom: 2rem;
@@ -223,7 +223,7 @@ button:hover {
 }
 
 #gameover-stage {
-  font-size: 1.4rem;
+  font-size: 2.8rem;
   color: #c00;
   letter-spacing: 0.15em;
   margin-bottom: 1rem;
@@ -231,7 +231,7 @@ button:hover {
 }
 
 #gameover-stats {
-  font-size: 0.9rem;
+  font-size: 1.8rem;
   color: #444;
   letter-spacing: 0.1em;
   margin-bottom: 2.5rem;
